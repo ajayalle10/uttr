@@ -1,5 +1,6 @@
 UTTR - select text, hear it
 ===========================
+Made by Ajay Alle
 
 HOW TO INSTALL (about 2 minutes, works in Google Chrome and Microsoft Edge)
 

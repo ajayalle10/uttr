@@ -6,7 +6,8 @@
 
 <p align="center">
   <strong>Select text. Hear it.</strong><br>
-  A lightweight Chrome extension that reads any text aloud the moment you highlight it.
+  A lightweight Chrome extension that reads any text aloud the moment you highlight it.<br>
+  <sub>by <strong>Ajay Alle</strong></sub>
 </p>
 
 <p align="center">
@@ -45,6 +46,7 @@
 17. [Known limitations](#known-limitations)
 18. [Future improvements](#future-improvements)
 19. [What I learned](#what-i-learned)
+20. [Author](#author)
 
 ---
 
@@ -466,8 +468,16 @@ Uttr is tested manually against this checklist. Reload the extension and refresh
 - **Asynchronous browser APIs**, such as voices that load late.
 - **Building for users:** handling accidental input, failing gracefully, and meeting accessibility contrast standards in both themes.
 
+## Author
+
+**Ajay Alle**: designed and built Uttr.
+
+- GitHub: [@ajayalle10](https://github.com/ajayalle10)
+
+Feedback, bug reports and feature ideas are welcome. Please [open an issue](https://github.com/ajayalle10/uttr/issues).
+
 ---
 
 <p align="center">
-  Built by <a href="https://github.com/ajayalle10">@ajayalle10</a>
+  Made by <strong>Ajay Alle</strong> · <a href="https://github.com/ajayalle10">@ajayalle10</a>
 </p>
