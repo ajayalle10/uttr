@@ -16,6 +16,12 @@
   <img alt="Permissions: storage only" src="https://img.shields.io/badge/permissions-storage%20only-E0492F">
 </p>
 
+<p align="center">
+  <a href="https://github.com/ajayalle10/uttr/releases/latest/download/uttr.zip"><strong>⬇ Download Uttr</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#installation">How to install (2 minutes)</a>
+</p>
+
 ---
 
 ## Table of contents
@@ -99,27 +105,77 @@ Empty selections, whitespace, single characters, right-clicks and unchanged sele
 
 ## Installation
 
-Uttr isn't on the Chrome Web Store yet, so you install it as an **unpacked extension**. This takes about a minute.
+Uttr works in **Google Chrome** and **Microsoft Edge** on Windows, Mac and Linux. It isn't on the Chrome Web Store yet, so installing takes a few extra clicks. It's about **2 minutes** and needs no technical knowledge.
 
-1. **Get the code**
-   ```bash
-   git clone https://github.com/ajayalle10/uttr.git
-   ```
-   Or click **Code → Download ZIP** on GitHub and unzip it.
+### Easy install (for everyone)
 
-2. **Open the extensions page:** go to `chrome://extensions` in Chrome.
+**Step 1: Download Uttr**
 
-3. **Enable Developer mode:** turn on the toggle in the top-right corner.
+👉 **[Click here to download `uttr.zip`](https://github.com/ajayalle10/uttr/releases/latest/download/uttr.zip)**
 
-4. **Load the extension:** click **Load unpacked** and select the `uttr` folder, the one that contains `manifest.json`.
+**Step 2: Unzip it and put the folder somewhere safe**
 
-5. **Pin it (optional):** click the puzzle-piece icon in the toolbar, then the pin next to **Uttr**.
+- **Windows:** open your **Downloads** folder, right-click `uttr.zip` and choose **Extract All… → Extract**.
+- **Mac:** open **Downloads** and double-click `uttr.zip`.
 
-6. **Refresh open tabs:** Chrome only injects the extension into pages loaded *after* installation, so reload any tabs that were already open.
+Then move the new **`uttr`** folder somewhere permanent, such as your **Documents** folder.
 
-### Updating after changing the code
-1. Click the **↻ reload** button on the Uttr card in `chrome://extensions`.
-2. Refresh the webpage you're testing on.
+> ⚠️ **Don't delete or move this folder later.** Your browser loads Uttr from it, and if the folder disappears, so does Uttr.
+
+**Step 3: Open your browser's extensions page**
+
+Copy this into the address bar and press **Enter**:
+
+| Browser | Address |
+|---|---|
+| Chrome | `chrome://extensions` |
+| Edge | `edge://extensions` |
+
+**Step 4: Turn on "Developer mode"**
+
+- **Chrome:** the switch in the **top-right** corner.
+- **Edge:** the switch in the **left sidebar**.
+
+It's a standard browser setting that lets you install extensions from a folder. It doesn't change anything else.
+
+**Step 5: Click "Load unpacked"**
+
+A button appears near the top of the page. Click it, open the **`uttr`** folder from Step 2 (the one containing `manifest.json`), and click **Select Folder**.
+
+✅ An **Uttr** card with the logo appears. It's installed.
+
+**Step 6: Pin Uttr to your toolbar (recommended)**
+
+Click the **puzzle-piece icon 🧩** to the right of the address bar, then the **pin 📌** next to Uttr. The Uttr icon now stays visible, one click away.
+
+### Start using it (30 seconds)
+
+1. **Open any website**, for example a news article or Wikipedia. Refresh any tabs that were already open, because Uttr only starts in pages loaded after it was installed.
+2. **Select a sentence** with your mouse. 🔊 Uttr reads it aloud.
+3. **Select something else** to switch to it, or press **`Esc`** to stop.
+4. **Click the Uttr icon** to change the **speed** or **voice**, or to turn auto-read **off**.
+
+That's it. Your settings are remembered, even after restarting your computer.
+
+### Updating to a new version
+
+1. Download the latest [`uttr.zip`](https://github.com/ajayalle10/uttr/releases/latest/download/uttr.zip) and unzip it.
+2. **Replace** the files in your existing `uttr` folder with the new ones.
+3. Go to `chrome://extensions` (or `edge://extensions`) and click the **↻ reload** icon on the Uttr card.
+
+Your settings are kept.
+
+### Uninstalling
+
+Go to `chrome://extensions` (or `edge://extensions`), click **Remove** on the Uttr card, then delete the `uttr` folder.
+
+### Install from source (for developers)
+
+```bash
+git clone https://github.com/ajayalle10/uttr.git
+```
+
+Then follow Steps 3–5 above and select the cloned `uttr` folder. After editing any file, click **↻** on the Uttr card in `chrome://extensions` and refresh the page you're testing on.
 
 ## Usage
 
@@ -151,6 +207,7 @@ uttr/
 │   ├── icon48.png       Extensions page and popup header
 │   └── icon128.png      Install dialog and Web Store
 ├── docs/                Images used in this README
+├── HOW-TO-INSTALL.txt   Plain-text install steps, included in the download ZIP
 └── README.md
 ```
 
@@ -360,6 +417,9 @@ Uttr is tested manually against this checklist. Reload the extension and refresh
 
 | Problem | Fix |
 |---|---|
+| "Manifest file is missing or unreadable" when loading | You selected the wrong folder. Pick the folder that directly contains `manifest.json`, not the ZIP and not a folder above it. |
+| I can't see the "Load unpacked" button | Turn on **Developer mode** first (Chrome: top-right; Edge: left sidebar). |
+| Uttr disappeared or shows an error after a while | The `uttr` folder was moved or deleted. Put it back, or re-download and load it again. |
 | Nothing is read on a page | Refresh the page. Extensions only load into pages opened after install or reload. |
 | Nothing is read on `chrome://…` pages, the Chrome Web Store or PDFs | Expected: Chrome blocks extensions there. |
 | The popup says "Uttr isn't running on this page" | Same as above, or the tab needs refreshing. |

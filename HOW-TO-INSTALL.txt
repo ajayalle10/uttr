@@ -1,0 +1,33 @@
+UTTR - select text, hear it
+===========================
+
+HOW TO INSTALL (about 2 minutes, works in Google Chrome and Microsoft Edge)
+
+1. MOVE THIS FOLDER SOMEWHERE SAFE
+   For example into your Documents folder.
+   Important: don't delete or move it later - the browser loads Uttr from here.
+
+2. OPEN THE EXTENSIONS PAGE
+   Chrome: type  chrome://extensions  in the address bar and press Enter.
+   Edge:   type  edge://extensions    in the address bar and press Enter.
+
+3. TURN ON "DEVELOPER MODE"
+   Chrome: the switch in the top-right corner.
+   Edge:   the switch in the left sidebar.
+
+4. CLICK "LOAD UNPACKED"
+   Choose THIS folder (the one that contains manifest.json) and click
+   "Select Folder".
+
+5. PIN IT (optional)
+   Click the puzzle-piece icon next to the address bar, then the pin next
+   to Uttr.
+
+HOW TO USE
+
+- Open any website (refresh tabs that were already open).
+- Select some text with your mouse - Uttr reads it aloud.
+- Press Esc to stop.
+- Click the Uttr icon to change the speed or voice, or to turn it off.
+
+More help: https://github.com/ajayalle10/uttr
