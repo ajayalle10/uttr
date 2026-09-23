@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Uttr",
+  "version": "0.1.0",
+  "description": "Automatically reads selected text aloud using your browser's built-in voices.",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": ["storage"],
+
+  "action": {
+    "default_title": "Uttr",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["defaults.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

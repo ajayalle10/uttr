@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  Uttr — popup panel
+  This page opens when the user clicks the extension's toolbar icon
+  ("default_popup" in manifest.json). It's a normal HTML page, but it
+  only lives while the popup is open: closing it destroys the page.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uttr</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="24" height="24">
+    <h1>Uttr</h1>
+  </header>
+
+  <!-- On/off toggle. Wrapping everything in a <label> makes the whole row clickable. -->
+  <label class="row">
+    <span>Auto-read selected text</span>
+    <input type="checkbox" id="enabled" class="switch">
+  </label>
+
+  <!-- Speed slider. <output> shows the current value next to the label. -->
+  <div class="field">
+    <div class="field-head">
+      <label for="rate">Speed</label>
+      <output id="rateValue" for="rate">1.0×</output>
+    </div>
+    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+  </div>
+
+  <!-- Voice picker. Filled in by popup.js from the voices installed on this computer. -->
+  <div class="field">
+    <label for="voice">Voice</label>
+    <select id="voice">
+      <option value="">System default</option>
+    </select>
+  </div>
+
+  <button id="stop" type="button"><span class="stop-icon" aria-hidden="true">■</span> Stop reading</button>
+
+  <!-- Short messages (e.g. "can't run on this page"). role="status" makes screen readers announce them. -->
+  <p id="status" class="status" role="status"></p>
+
+  <!--
+    Manifest V3 forbids inline <script> code for security, so all logic lives
+    in separate files. defaults.js must load first because popup.js uses it.
+  -->
+  <script src="../defaults.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
