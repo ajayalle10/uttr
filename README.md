@@ -209,7 +209,14 @@ uttr/
 │   ├── icon48.png       Extensions page and popup header
 │   └── icon128.png      Install dialog and Web Store
 ├── docs/                Images used in this README
+├── scripts/
+│   └── build.py         Builds dist/uttr.zip (Chrome/Edge/Opera) and dist/uttr-firefox.zip
+├── store/
+│   ├── LISTING.md       Store listing text to copy and paste (descriptions, justifications)
+│   ├── SUBMISSION-GUIDE.md  Step-by-step publishing guide for Edge, Firefox and Opera
+│   └── *.png            Store logo, screenshots (1280×800) and promo tile (440×280)
 ├── HOW-TO-INSTALL.txt   Plain-text install steps, included in the download ZIP
+├── PRIVACY.md           Privacy policy (required by the extension stores)
 └── README.md
 ```
 
@@ -373,6 +380,8 @@ That's all. In particular:
 - **No network requests.** Uttr sends nothing anywhere. The only exception is the "Google" voices, which Chrome itself may stream from Google's speech service, exactly as it would for any website that uses the Web Speech API.
 - **No data collection, analytics or tracking.** Selected text is passed straight to the browser's speech engine and never stored.
 
+Read the full [privacy policy](PRIVACY.md).
+
 ## Visual design
 
 The popup uses the colours of the Uttr logo:
@@ -436,7 +445,16 @@ Uttr is tested manually against this checklist. Reload the extension and refresh
 |---|---|
 | Google Chrome 88+ | ✅ Supported (Manifest V3 and `Intl.Segmenter`) |
 | Microsoft Edge, Brave, Opera, other Chromium browsers | ✅ Should work; load the extension the same way |
-| Firefox, Safari | ❌ Not yet: they use different extension packaging |
+| Firefox 142+ | 🟡 Package ready (`uttr-firefox.zip`, passes Mozilla's `web-ext lint`); coming to Firefox Add-ons |
+| Safari | ❌ Not yet: needs a Mac, Xcode and Apple's paid developer program |
+
+### Building the store packages
+
+```bash
+python scripts/build.py
+```
+
+This creates `dist/uttr.zip` for Chrome, Edge and Opera, and `dist/uttr-firefox.zip` for Firefox. The Firefox package is the same extension plus a `browser_specific_settings` block (add-on ID, minimum version and a data-collection declaration). Chrome would warn about that block, so it's added only to the Firefox build. See [`store/SUBMISSION-GUIDE.md`](store/SUBMISSION-GUIDE.md) for how to publish.
 
 ## Known limitations
 
